@@ -5,16 +5,19 @@
 #macro SCREEN_W 512
 #macro SCREEN_H 384
 
+#macro SWORD_ATTACK_FRAMES 5
+
 enum TILE
 {
 	SPRITE,
 	Z
 }
 
-enum CHAR_TILES
+enum CHAR_STATE
 {
 	TOWARDS,
-	TOWARDS_RIGHT
+	TOWARDS_RIGHT,
+	ATTACK
 }
 
 function macros(){
