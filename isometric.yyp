@@ -10,6 +10,7 @@
     {"id":{"name":"TileToScreenX","path":"scripts/TileToScreenX/TileToScreenX.yy",},"order":1,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":1,},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},"order":0,},
+    {"id":{"name":"SwordAttackAniRight","path":"sprites/SwordAttackAniRight/SwordAttackAniRight.yy",},"order":4,},
     {"id":{"name":"oSwordChar","path":"objects/oSwordChar/oSwordChar.yy",},"order":1,},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
