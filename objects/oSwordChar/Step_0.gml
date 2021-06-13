@@ -90,7 +90,9 @@ function swordRunLeft()
 /// hacky find all instances of a type nearby and swap their sprite tile
 function checkHitSword()
 {
-	//TODO: include with of self in calculation?
+	//TODO: include width of self in calculation?
+	//this assumes sprite center is at bottom mid of sprite
+	//and assumes attack radius should calc from centre of sprite
 	_x = TileToScreenX(charX, charY);
 	_y = TileToScreenY(charX, charY);
 	_enemyTypes = [oEnemy];
@@ -111,8 +113,9 @@ function checkHitSword()
 		{
 			spriteWidth = sprite_get_width(_list[i].sprite_index);
 			spriteHeight = sprite_get_height(_list[i].sprite_index);
-		    if (_list[i] && point_distance(abs(_list[i].x - _x) - spriteWidth/2, 
+		    if (_list[i] && point_distance(abs(_list[i].x - _x), 
 										abs(_list[i].y - _y) - spriteHeight/2, 0, 0) <= _radius)
+				//note since sprite is already centered, don't need to adjust x to half of sprite
 			{
 				//hit, do something to them
 				_list[i].sprite_index = sDED_ENEMY;
