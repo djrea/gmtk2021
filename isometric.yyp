@@ -1,9 +1,11 @@
 {
   "resources": [
+    {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":2,},
     {"id":{"name":"sStatic","path":"sprites/sStatic/sStatic.yy",},"order":0,},
     {"id":{"name":"ScreenToTileX","path":"scripts/ScreenToTileX/ScreenToTileX.yy",},"order":3,},
     {"id":{"name":"ScreenToTileY","path":"scripts/ScreenToTileY/ScreenToTileY.yy",},"order":4,},
     {"id":{"name":"sSwordChar","path":"sprites/sSwordChar/sSwordChar.yy",},"order":3,},
+    {"id":{"name":"sTMP_ENEMY","path":"sprites/sTMP_ENEMY/sTMP_ENEMY.yy",},"order":6,},
     {"id":{"name":"tileHover","path":"sprites/tileHover/tileHover.yy",},"order":2,},
     {"id":{"name":"TileToScreenY","path":"scripts/TileToScreenY/TileToScreenY.yy",},"order":2,},
     {"id":{"name":"oRender","path":"objects/oRender/oRender.yy",},"order":0,},

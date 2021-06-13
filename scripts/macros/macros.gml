@@ -6,6 +6,10 @@
 #macro SCREEN_H 384
 
 #macro SWORD_ATTACK_FRAMES 5
+#macro SWORD_ATTACK_RADIUS 20
+//radius is from bitmap center (configd in the sprite itself)
+// 10px is about the sprite distance of the sword currently
+//this extends it about 5px extra
 
 enum TILE
 {
