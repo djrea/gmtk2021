@@ -107,7 +107,7 @@ function checkHitSword()
 										abs(_list[i].y - _y) - spriteHeight/2, 0, 0) <= _radius)
 			{
 				//hit, do something to them
-				_list[i].image_index = 1;
+				_list[i].sprite_index = sDED_ENEMY;
 			}
 		}
 	}
