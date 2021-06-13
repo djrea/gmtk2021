@@ -1,21 +1,36 @@
 /// @description Input Handler
 
 if(playerActive){
-	if (keyboard_check_pressed(ord("A")) || keyboard_check_pressed(ord("H"))){ //left
+	if (keyboard_check(ord("A")) || keyboard_check(ord("H"))){ //left
 		charX -= MOVE_RATE * 0.5;
 		charY += MOVE_RATE * 0.5;
+		rangedRunLeft();
 	}
-	if (keyboard_check_pressed(ord("D")) || keyboard_check_pressed(ord("N"))){ //right
+	if (keyboard_check(ord("D")) || keyboard_check(ord("N"))){ //right
 		charX += MOVE_RATE * 0.5;
 		charY -= MOVE_RATE * 0.5;
+		rangedRunRight();
 	}
-	if (keyboard_check_pressed(ord("W")) || keyboard_check_pressed(ord("C"))){ //up
+	if (keyboard_check(ord("W")) || keyboard_check(ord("C"))){ //up
 		charX -= MOVE_RATE;
 		charY -= MOVE_RATE;
+		rangedRunLeft();
 	}
-	if (keyboard_check_pressed(ord("S")) || keyboard_check_pressed(ord("T"))){ //down
+	if (keyboard_check(ord("S")) || keyboard_check(ord("T"))){ //down
 		charX += MOVE_RATE;
 		charY += MOVE_RATE;
+		rangedRunRight();
+	}
+	if keyboard_check_released(ord("W")) ||	
+		keyboard_check_released(ord("C")) ||
+		keyboard_check_released(ord("A")) ||
+		keyboard_check_released(ord("H")) ||
+		keyboard_check_released(ord("S")) ||
+		keyboard_check_released(ord("T")) ||
+		keyboard_check_released(ord("D")) ||
+		keyboard_check_released(ord("N")) 
+	{
+		stopRunAnimation();
 	}
 	if mouse_check_button_pressed(mb_left) //attack
 	{
@@ -32,16 +47,36 @@ if(playerActive){
 	}
 }
 
-function resetEnemies()
+function stopRunAnimation()
 {
-	_num = instance_number(oEnemy);
-	// First, make a list of all instances of the given type
-	for (var i = 0; i < _num; i++ )
+	state = CHAR_STATE.TOWARDS;
+	sprite_index = sRangedChar;
+	image_index = 0;
+	image_speed = 0;
+}
+
+function rangedRunRight()
+{
+	if state == CHAR_STATE.ATTACK
+		return;
+	if(state != CHAR_STATE.RUN_RIGHT)
 	{
-	    enemyInstance = instance_find(oEnemy, i);
-		enemyInstance.image_index = 0;
+		state = CHAR_STATE.RUN_RIGHT;
+		sprite_index = sRangedRunRight;
+		image_speed = 1;
 	}
-	
+}
+
+function rangedRunLeft()
+{
+	if state == CHAR_STATE.ATTACK
+		return;
+	if(state != CHAR_STATE.RUN_LEFT)
+	{
+		state = CHAR_STATE.RUN_LEFT;
+		sprite_index = sRangedRunLeft;
+		image_speed = 1;
+	}
 }
 
 /// hacky find all instances of a type nearby and swap their sprite tile

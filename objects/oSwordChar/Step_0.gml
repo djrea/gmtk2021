@@ -1,40 +1,42 @@
 /// @description Input Handler
 
 if(playerActive){
-	if (keyboard_check_pressed(ord("A")) || keyboard_check_pressed(ord("H"))){ //left
+	if (keyboard_check(ord("A")) || keyboard_check(ord("H"))){ //left
 		charX -= MOVE_RATE * 0.5;
-	if (keyboard_check_pressed(ord("D")) || keyboard_check_pressed(ord("N"))){ //right
+		charY += MOVE_RATE * 0.5;
+		swordRunLeft();
+	}
+	if (keyboard_check(ord("D")) || keyboard_check(ord("N"))){ //right
 		charX += MOVE_RATE * 0.5;
 		charY -= MOVE_RATE * 0.5;
+		swordRunRight();
 	}
-	if (keyboard_check_pressed(ord("W")) || keyboard_check_pressed(ord("C"))){ //up
+	if (keyboard_check(ord("W")) || keyboard_check(ord("C"))){ //up
 		charX -= MOVE_RATE;
 		charY -= MOVE_RATE;
+		swordRunRight();
 	}
-	if (keyboard_check_pressed(ord("S")) || keyboard_check_pressed(ord("T"))){ //down
+	if (keyboard_check(ord("S")) || keyboard_check(ord("T"))){ //down
 		charX += MOVE_RATE;
 		charY += MOVE_RATE;
+		swordRunLeft();
 	}
+	if keyboard_check_released(ord("W")) ||
+		keyboard_check_released(ord("C")) ||
+		keyboard_check_released(ord("A")) ||
+		keyboard_check_released(ord("H")) ||
+		keyboard_check_released(ord("S")) ||
+		keyboard_check_released(ord("T")) ||
+		keyboard_check_released(ord("D")) ||
+		keyboard_check_released(ord("N")) 
+	{
+		stopRunAnimation();
+	}	
 	if mouse_check_button_pressed(mb_left) //attack
 	{
 		state = CHAR_STATE.ATTACK;
 		image_index = 0;
 		image_speed = 1;
-		charY += MOVE_RATE * 0.5;
-	}
-	swordRunLeft();
-	swordRunRight();
-	swordRunRight();
-	swordRunLeft();
-if keyboard_check_released(ord("W")) ||
-	keyboard_check_released(ord("A")) ||
-	keyboard_check_released(ord("S")) ||
-	keyboard_check_released(ord("D")) 
-{
-	stopRunAnimation();
-}
-if keyboard_check_pressed(ord("R")) //down
-	resetEnemies();
 
 		if charX > ScreenToTileX(mouse_x, mouse_y)
 			sprite_index = sSwordAttackAniLeft;
@@ -75,20 +77,6 @@ function swordRunLeft()
 		sprite_index = sSwordRunLeft;
 		image_speed = 1;
 	}
-}
-
-function resetEnemies()
-{
-	_num = instance_number(oEnemy);
-	// First, make a list of all instances of the given type
-	for (var i = 0; i < _num; i++ )
-	{
-	    enemyInstance = instance_find(oEnemy, i);
-		enemyInstance.sprite_index = sTMP_ENEMY;
-		enemyInstance.state = ENEMY_STATE.DEFAULT;
-		enemyInstance.alarm_set(0, ENEMY_MOVE_ALARM_SPEED);
-	}
-	
 }
 
 /// hacky find all instances of a type nearby and swap their sprite tile

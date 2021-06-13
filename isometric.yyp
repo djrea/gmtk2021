@@ -20,10 +20,12 @@
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},"order":0,},
     {"id":{"name":"sSwordRunRight","path":"sprites/sSwordRunRight/sSwordRunRight.yy",},"order":8,},
     {"id":{"name":"sSwordAttackAniRight","path":"sprites/sSwordAttackAniRight/sSwordAttackAniRight.yy",},"order":4,},
+    {"id":{"name":"sRangedRunRight","path":"sprites/sRangedRunRight/sRangedRunRight.yy",},"order":10,},
     {"id":{"name":"oTether","path":"objects/oTether/oTether.yy",},"order":4,},
     {"id":{"name":"sRangedAttackAniLeft","path":"sprites/sRangedAttackAniLeft/sRangedAttackAniLeft.yy",},"order":8,},
     {"id":{"name":"oSwordChar","path":"objects/oSwordChar/oSwordChar.yy",},"order":1,},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"order":0,},
+    {"id":{"name":"sRangedRunLeft","path":"sprites/sRangedRunLeft/sRangedRunLeft.yy",},"order":11,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
