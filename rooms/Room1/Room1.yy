@@ -15,7 +15,7 @@
   "layers": [
     {"assets":[],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Assets_1","tags":[],"resourceType":"GMRAssetLayer",},
     {"instances":[
-        {"properties":[],"isDnd":false,"objectId":{"name":"oMap","path":"objects/oMap/oMap.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":512.0,"y":0.0,"resourceVersion":"1.0","name":"inst_316AA9D1","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oRender","path":"objects/oRender/oRender.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":512.0,"y":32.0,"resourceVersion":"1.0","name":"inst_61ECE5C1","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oTether","path":"objects/oTether/oTether.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":128.0,"y":224.0,"resourceVersion":"1.0","name":"inst_2E45552B","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oSwordChar","path":"objects/oSwordChar/oSwordChar.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":0.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":96.0,"y":128.0,"resourceVersion":"1.0","name":"inst_650A8174","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oRangedChar","path":"objects/oRangedChar/oRangedChar.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":192.0,"y":160.0,"resourceVersion":"1.0","name":"inst_39AB6946","tags":[],"resourceType":"GMRInstance",},
@@ -55,13 +55,13 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
+    {"name":"inst_61ECE5C1","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_650A8174","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_76F69C50","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_4DBCA064","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_64DB4F9","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_39AB6946","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_2E45552B","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_316AA9D1","path":"rooms/Room1/Room1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
