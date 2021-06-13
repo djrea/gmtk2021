@@ -2,22 +2,28 @@
 
 if state == ENEMY_STATE.MOVING
 {
+	newX = posX;
+	newY = posY;
 	if dir == DIRS.LEFT
 	{
-		x -= ENEMY_MOVE_RATE;
+		newX = posX - ENEMY_MOVE_RATE;
 	}
 	if dir == DIRS.RIGHT
 	{
-		x += ENEMY_MOVE_RATE;
+		newX = posX + ENEMY_MOVE_RATE;
 	}
 	if dir == DIRS.UP
 	{
-		y -= ENEMY_MOVE_RATE;
+		newY = posY - ENEMY_MOVE_RATE;
 	}
 	if dir == DIRS.DOWN
 	{
-		y += ENEMY_MOVE_RATE;
+		newY = posY + ENEMY_MOVE_RATE;
 	}
+	//this does the actual moving/checking if they can move
+	newPos = oRender.moveRestrictedToTiles(posX, posY, newX, newY, SLIME_MANTLE_HEIGHT)
+	posX = newPos[0];
+	posY = newPos[1];
 }
 else
 {

@@ -1,6 +1,6 @@
 /// @description instantiate
 #macro ENEMY_MOVE_ALARM_SPEED room_speed*2
-#macro ENEMY_MOVE_RATE 0.1
+#macro ENEMY_MOVE_RATE 0.01
 state = ENEMY_STATE.DEFAULT;
 dir = DIRS.DEFAULT;
 
