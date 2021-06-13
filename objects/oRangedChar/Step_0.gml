@@ -21,6 +21,7 @@ if(playerActive){
 		charY += MOVE_RATE;
 		rangedRunRight();
 	}
+	
 	if keyboard_check_released(ord("W")) ||	
 		keyboard_check_released(ord("C")) ||
 		keyboard_check_released(ord("A")) ||

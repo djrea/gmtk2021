@@ -35,6 +35,7 @@ function moveRestrictedToTiles(currX, currY, desiredX, desiredY, maxHeightDelta)
 	{
 		retX = desiredX;
 		retY = desiredY;
+		show_debug_message("TRUE");
 	}
 	
 	return [retX, retY];

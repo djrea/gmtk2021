@@ -59,7 +59,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 9,
-    "yorigin": 3,
+    "yorigin": 29,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sRangedChar","path":"sprites/sRangedChar/sRangedChar.yy",},

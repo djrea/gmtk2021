@@ -11,7 +11,7 @@ var swordChar = [oSwordChar];
 for(var a = 0; a < array_length_1d(swordChar); a++){
 	swordCharX = swordChar[a].charX;
 	swordCharY = swordChar[a].charY;
-	swordCharOffsetY = (sprite_get_height(swordChar[a].sprite_index) * 0.5);
+	swordCharOffsetY = (sprite_get_height(swordChar[a].sprite_index) * 0.5 );
 }
 var rangedChar = [oRangedChar];
 for(var a = 0; a < array_length_1d(rangedChar); a++){
