@@ -21,8 +21,8 @@ for(var a = 0; a < array_length_1d(rangedChar); a++){
 }
 
 var swordCharScreenX = TileToScreenX(swordCharX, swordCharY);
-var swordCharScreenY = TileToScreenY(swordCharX, swordCharY) + swordCharOffsetY;
+var swordCharScreenY = TileToScreenY(swordCharX, swordCharY) - swordCharOffsetY;
 var rangedCharScreenX = TileToScreenX(rangedCharX, rangedCharY);
-var rangedCharScreenY = TileToScreenY(rangedCharX, rangedCharY) + rangedCharOffsetY;
+var rangedCharScreenY = TileToScreenY(rangedCharX, rangedCharY) - rangedCharOffsetY;
 
 draw_line_width_color(swordCharScreenX, swordCharScreenY, rangedCharScreenX, rangedCharScreenY, 3, c_red, c_red);
