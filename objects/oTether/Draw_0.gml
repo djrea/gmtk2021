@@ -1,5 +1,5 @@
 /// @description Insert description here
-// You can write your code in this editor
+// 
 var swordCharX = -1;
 var swordCharY = -1;
 var rangedCharX = -1;
