@@ -40,6 +40,7 @@ function resetEnemies()
 /// hacky find all instances of a type nearby and swap their sprite tile
 function checkHitSword()
 {
+	//TODO: include with of self in calculation?
 	_x = TileToScreenX(charX, charY);
 	_y = TileToScreenY(charX, charY);
 	_enemyTypes = [oEnemy];
@@ -58,7 +59,10 @@ function checkHitSword()
 		// Then, deactivate all instances inside the given radius
 		for (var i = 0; i < _num; i++ )
 		{
-		    if (_list[i] && point_distance(_list[i].x, _list[i].y, _x, _y) <= _radius)
+			spriteWidth = sprite_get_width(_list[i].sprite_index);
+			spriteHeight = sprite_get_height(_list[i].sprite_index);
+		    if (_list[i] && point_distance(abs(_list[i].x - _x) - spriteWidth/2, 
+										abs(_list[i].y - _y) - spriteHeight/2, 0, 0) <= _radius)
 			{
 				//hit, do something to them
 				_list[i].image_index = 1;
