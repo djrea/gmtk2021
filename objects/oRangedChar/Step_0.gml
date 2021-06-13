@@ -2,26 +2,32 @@
 
 if(playerActive){
 	if (keyboard_check(ord("A")) || keyboard_check(ord("H"))){ //left
-		charX -= MOVE_RATE * 0.5;
-		charY += MOVE_RATE * 0.5;
+		newCharX = charX - MOVE_RATE * 0.5;
+		newCharY = charY + MOVE_RATE * 0.5;
 		rangedRunLeft();
 	}
 	if (keyboard_check(ord("D")) || keyboard_check(ord("N"))){ //right
-		charX += MOVE_RATE * 0.5;
-		charY -= MOVE_RATE * 0.5;
+		newCharX = charX + MOVE_RATE * 0.5;
+		newCharY = charY - MOVE_RATE * 0.5;
 		rangedRunRight();
 	}
 	if (keyboard_check(ord("W")) || keyboard_check(ord("C"))){ //up
-		charX -= MOVE_RATE;
-		charY -= MOVE_RATE;
+		newCharX = charX - MOVE_RATE;
+		newCharY = charY - MOVE_RATE;
 		rangedRunLeft();
 	}
 	if (keyboard_check(ord("S")) || keyboard_check(ord("T"))){ //down
-		charX += MOVE_RATE;
-		charY += MOVE_RATE;
+		newCharX = charX + MOVE_RATE;
+		newCharY = charY + MOVE_RATE;
 		rangedRunRight();
 	}
-	
+	//this does the actual moving/checking if they can move
+	if state == CHAR_STATE.RUN_LEFT || state == CHAR_STATE.RUN_RIGHT
+	{
+		newPos = oRender.moveRestrictedToTiles(charX, charY, newCharX, newCharY, RANGED_MANTLE_HEIGHT)
+		charX = newPos[0];
+		charY = newPos[1];
+	}
 	if keyboard_check_released(ord("W")) ||	
 		keyboard_check_released(ord("C")) ||
 		keyboard_check_released(ord("A")) ||

@@ -14,7 +14,7 @@ for(var tX = 0; tX < MAP_W; tX++)
 		var tileMapData = tilemap_get(tileMap, tX, tY); 
 		var thisTile = [-1, 0]; //[Sprite, Z]
 		thisTile[TILE.SPRITE] = tileMapData;
-		thisTile[TILE.Z] = irandom(3);
+		thisTile[TILE.Z] = irandom(5);
 		//# is the grid ds accessor
 		global.theMap[# tX, tY] = thisTile;
 	}
