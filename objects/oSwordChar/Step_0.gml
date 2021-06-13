@@ -48,13 +48,13 @@ if(playerActive){
 
 		if charX > ScreenToTileX(mouse_x, mouse_y)
 		{
-			sprite_index = sRangedAttackAniLeft;
+			sprite_index = sSwordAttackAniLeft;
 			dir = DIRS.LEFT;
 		}
 		else
 		{
 			dir = DIRS.RIGHT;
-			sprite_index = sRangedAttackAniRight;
+			sprite_index = sSwordAttackAniRight;
 		}
 		checkHitSword(dir);
 	}
