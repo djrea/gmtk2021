@@ -1,29 +1,23 @@
 /// @description Input Handler
 
-//A and D are scaled because you technically move farther with them
-if keyboard_check(ord("A")) //left
-{
-	charX -= MOVE_RATE * 0.5;
-	charY += MOVE_RATE * 0.5;
+if (keyboard_check_pressed(ord("A")) || keyboard_check_pressed(ord("H"))){ //left
+	charX -= 1;
 }
-if keyboard_check(ord("D")) //right
-{
-	charX += MOVE_RATE * 0.5;
-	charY -= MOVE_RATE * 0.5;
+if (keyboard_check_pressed(ord("D")) || keyboard_check_pressed(ord("N"))){ //right
+	charX += 1;
 }
-if keyboard_check(ord("W")) //up
-{
-	charX -= MOVE_RATE;
-	charY -= MOVE_RATE;
+if (keyboard_check_pressed(ord("W")) || keyboard_check_pressed(ord("C"))){ //up
+	charY -= 1;
 }
-if keyboard_check(ord("S")) //down
-{
-	charX += MOVE_RATE;
-	charY += MOVE_RATE;
+if (keyboard_check_pressed(ord("S")) || keyboard_check_pressed(ord("T"))){ //down
+	charY += 1;
 }
-if keyboard_check_pressed(ord("R")) //down
-	resetEnemies();
-
+/*if keyboard_check_pressed(ord("D")) //right
+	charX += 1;
+if keyboard_check_pressed(ord("W")) //up
+	charY -= 1;
+if keyboard_check_pressed(ord("S")) //down
+	charY += 1;*/
 if mouse_check_button_pressed(mb_left) //attack
 {
 	state = CHAR_STATE.ATTACK;
