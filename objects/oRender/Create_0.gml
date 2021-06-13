@@ -31,7 +31,7 @@ function moveRestrictedToTiles(currX, currY, desiredX, desiredY, maxHeightDelta)
 	tileZ = tileData[1];
 	oldZ =  global.theMap[# int64(currX), int64(currY)][1];
 	if tileType > 0  && //not empty tile or null tile
-		abs(tileZ - oldZ) < maxHeightDelta
+		abs(tileZ - oldZ) <= maxHeightDelta
 	{
 		retX = desiredX;
 		retY = desiredY;
