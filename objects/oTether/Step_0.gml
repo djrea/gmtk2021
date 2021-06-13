@@ -85,10 +85,10 @@ function checkTetherEnemyCollision(){
 		    var enemyInstance = instance_find(enemyType, b);
 			var collision = collision_line(swordTetherX, swordTetherY, rangedTetherX, rangedTetherY, enemyInstance, false, false);
 			if(collision){
-				enemyInstance.sprite_index = sDED_ENEMY;
+				//enemyInstance.sprite_index = sDED_ENEMY;
 				tetherHit = true;
 			}else{
-				enemyInstance.sprite_index = sTMP_ENEMY;
+				//enemyInstance.sprite_index = sTMP_ENEMY;
 			}
 		}
 	}
