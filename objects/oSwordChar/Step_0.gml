@@ -47,11 +47,16 @@ if(playerActive){
 		image_speed = 1;
 
 		if charX > ScreenToTileX(mouse_x, mouse_y)
-			sprite_index = sSwordAttackAniLeft;
+		{
+			sprite_index = sRangedAttackAniLeft;
+			dir = DIRS.LEFT;
+		}
 		else
-			sprite_index = sSwordAttackAniRight;
-		
-		checkHitSword();
+		{
+			dir = DIRS.RIGHT;
+			sprite_index = sRangedAttackAniRight;
+		}
+		checkHitSword(dir);
 	}
 }
 
@@ -88,7 +93,7 @@ function swordRunLeft()
 }
 
 /// hacky find all instances of a type nearby and swap their sprite tile
-function checkHitSword()
+function checkHitSword(dir)
 {
 	//TODO: include width of self in calculation?
 	//this assumes sprite center is at bottom mid of sprite
@@ -108,9 +113,14 @@ function checkHitSword()
 		for (var i = 0; i < _num; i++ )
 		    _list[i] = instance_find(_enemyType, i);
 
-		// Then, deactivate all instances inside the given radius
+		// Then, check all instances inside the given radius
 		for (var i = 0; i < _num; i++ )
 		{
+			//only hit facing the right way
+			if (dir == DIRS.LEFT && _list[i].x - _x > 0) //looking left, enemy right
+				|| (dir == DIRS.RIGHT && _list[i].x - _x < 0) //looking right, enemy left
+				continue; //skip this enemy
+				
 			spriteWidth = sprite_get_width(_list[i].sprite_index);
 			spriteHeight = sprite_get_height(_list[i].sprite_index);
 		    if (_list[i] && point_distance(abs(_list[i].x - _x), 
