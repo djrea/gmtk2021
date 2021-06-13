@@ -3,8 +3,5 @@
 //manage attacks
 if state == CHAR_STATE.ATTACK || state == CHAR_STATE.RUN_RIGHT || state == CHAR_STATE.RUN_LEFT
 {
-	state = CHAR_STATE.TOWARDS;
-	sprite_index = sSwordChar;
-	image_index = 0;
-	image_speed = 0;
+	stopRunAnimation();
 }

@@ -25,11 +25,19 @@ if keyboard_check(ord("S")) //down
 	charY += SWORD_CHAR_MOVE_RATE;
 	swordRunLeft();
 }
+if keyboard_check_released(ord("W")) ||
+	keyboard_check_released(ord("A")) ||
+	keyboard_check_released(ord("S")) ||
+	keyboard_check_released(ord("D")) 
+{
+	stopRunAnimation();
+}
 if keyboard_check_pressed(ord("R")) //down
 	resetEnemies();
 
 if mouse_check_button_pressed(mb_left) //attack
 {
+	stopRunAnimation();
 	state = CHAR_STATE.ATTACK;
 	image_index = 0;
 	image_speed = 1;
@@ -42,8 +50,18 @@ if mouse_check_button_pressed(mb_left) //attack
 	checkHitSword();
 }
 
+function stopRunAnimation()
+{
+	state = CHAR_STATE.TOWARDS;
+	sprite_index = sSwordChar;
+	image_index = 0;
+	image_speed = 0;
+}
+
 function swordRunRight()
 {
+	if state == CHAR_STATE.ATTACK
+		return;
 	if(state != CHAR_STATE.RUN_RIGHT)
 	{
 		state = CHAR_STATE.RUN_RIGHT;
@@ -54,6 +72,8 @@ function swordRunRight()
 
 function swordRunLeft()
 {
+	if state == CHAR_STATE.ATTACK
+		return;
 	if(state != CHAR_STATE.RUN_LEFT)
 	{
 		state = CHAR_STATE.RUN_LEFT;
