@@ -12,7 +12,7 @@
     {"id":{"name":"sTMP_ENEMY","path":"sprites/sTMP_ENEMY/sTMP_ENEMY.yy",},"order":6,},
     {"id":{"name":"tileHover","path":"sprites/tileHover/tileHover.yy",},"order":2,},
     {"id":{"name":"TileToScreenY","path":"scripts/TileToScreenY/TileToScreenY.yy",},"order":2,},
-    {"id":{"name":"oRender","path":"objects/oRender/oRender.yy",},"order":0,},
+    {"id":{"name":"oMap","path":"objects/oMap/oMap.yy",},"order":0,},
     {"id":{"name":"oRangedChar","path":"objects/oRangedChar/oRangedChar.yy",},"order":3,},
     {"id":{"name":"TileToScreenX","path":"scripts/TileToScreenX/TileToScreenX.yy",},"order":1,},
     {"id":{"name":"sSwordAttackAniLeft","path":"sprites/sSwordAttackAniLeft/sSwordAttackAniLeft.yy",},"order":5,},
