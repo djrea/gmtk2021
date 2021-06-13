@@ -2,6 +2,7 @@
 
 
 //returns vector of fromX and fromY to nearest intersection with tether
+//assumes screen coords
 function directionToTether(fromX, fromY)
 {
 	vectorX = swordTetherX - rangedTetherX;
@@ -13,6 +14,6 @@ function directionToTether(fromX, fromY)
 	//stealing math from https://math.stackexchange.com/questions/1398634/finding-a-perpendicular-vector-from-a-line-to-a-point
 	projectionX = (fromX + slope*(fromY-yInterceptTether))/(1+slope*slope);
 	projectionY = slope * ( projectionX ) + yInterceptTether
-
-	return [projectionX, projectionY];
+	
+	return [fromX - projectionX, fromY - projectionY];
 }

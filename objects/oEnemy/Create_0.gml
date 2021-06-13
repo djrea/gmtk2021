@@ -15,22 +15,25 @@ alarm_set(0, ENEMY_MOVE_ALARM_SPEED*irandom(10)/10.0 +0.1);
 
 function chooseDirection()
 {
-	vectorToTether = oTether.directionToTether(posX, posY);
-	if abs(vectorToTether[0]) < abs(vectorToTether[1])
+	vectorToTether = oTether.directionToTether(TileToScreenX(posX, posY), TileToScreenY(posX, posY));
+	toTetherTileVectorX = ScreenToTileX(vectorToTether[0], vectorToTether[1]);
+	toTetherTileVectorY = ScreenToTileY(vectorToTether[0], vectorToTether[1]);
+	show_debug_message(string(toTetherTileVectorX)+", "+string(toTetherTileVectorY))
+	if abs(toTetherTileVectorX) < abs(toTetherTileVectorY)
 	{
 		//y direction is larger, head there
-		if vectorToTether[1] > 0
-			dir = DIRS.UP;
-		else
+		if toTetherTileVectorY > 0 //tehter -> enemy = up
 			dir = DIRS.DOWN;
+		else
+			dir = DIRS.UP;
 	}
 	else
 	{
 		//x direction is larger, head there
-		if vectorToTether[0] > 0
-			dir = DIRS.RIGHT;
-		else
+		if toTetherTileVectorX > 0 //tether -> enemy = right
 			dir = DIRS.LEFT;
+		else
+			dir = DIRS.RIGHT;
 	}
 	
 	tmpDir = irandom(DIRS.NUM_DIRS);
