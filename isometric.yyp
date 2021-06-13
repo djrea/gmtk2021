@@ -4,6 +4,7 @@
     {"id":{"name":"sStatic","path":"sprites/sStatic/sStatic.yy",},"order":0,},
     {"id":{"name":"ScreenToTileX","path":"scripts/ScreenToTileX/ScreenToTileX.yy",},"order":3,},
     {"id":{"name":"ScreenToTileY","path":"scripts/ScreenToTileY/ScreenToTileY.yy",},"order":4,},
+    {"id":{"name":"sDED_ENEMY","path":"sprites/sDED_ENEMY/sDED_ENEMY.yy",},"order":7,},
     {"id":{"name":"sSwordChar","path":"sprites/sSwordChar/sSwordChar.yy",},"order":3,},
     {"id":{"name":"sTMP_ENEMY","path":"sprites/sTMP_ENEMY/sTMP_ENEMY.yy",},"order":6,},
     {"id":{"name":"tileHover","path":"sprites/tileHover/tileHover.yy",},"order":2,},

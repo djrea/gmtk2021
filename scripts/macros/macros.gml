@@ -11,6 +11,16 @@ enum TILE
 	Z
 }
 
+enum DIRS
+{
+	DEFAULT,
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN,
+	NUM_DIRS
+}
+
 enum CHAR_STATE
 {
 	TOWARDS,

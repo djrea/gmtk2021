@@ -1,23 +1,29 @@
 /// @description Input Handler
 
-if (keyboard_check_pressed(ord("A")) || keyboard_check_pressed(ord("H"))){ //left
-	charX -= 1;
+//A and D are scaled because you technically move farther with them
+if keyboard_check(ord("A")) //left
+{
+	charX -= SWORD_CHAR_MOVE_RATE * 0.5;
+	charY += SWORD_CHAR_MOVE_RATE * 0.5;
 }
-if (keyboard_check_pressed(ord("D")) || keyboard_check_pressed(ord("N"))){ //right
-	charX += 1;
+if keyboard_check(ord("D")) //right
+{
+	charX += SWORD_CHAR_MOVE_RATE * 0.5;
+	charY -= SWORD_CHAR_MOVE_RATE * 0.5;
 }
-if (keyboard_check_pressed(ord("W")) || keyboard_check_pressed(ord("C"))){ //up
-	charY -= 1;
+if keyboard_check(ord("W")) //up
+{
+	charX -= SWORD_CHAR_MOVE_RATE;
+	charY -= SWORD_CHAR_MOVE_RATE;
 }
-if (keyboard_check_pressed(ord("S")) || keyboard_check_pressed(ord("T"))){ //down
-	charY += 1;
+if keyboard_check(ord("S")) //down
+{
+	charX += SWORD_CHAR_MOVE_RATE;
+	charY += SWORD_CHAR_MOVE_RATE;
 }
-/*if keyboard_check_pressed(ord("D")) //right
-	charX += 1;
-if keyboard_check_pressed(ord("W")) //up
-	charY -= 1;
-if keyboard_check_pressed(ord("S")) //down
-	charY += 1;*/
+if keyboard_check_pressed(ord("R")) //down
+	resetEnemies();
+
 if mouse_check_button_pressed(mb_left) //attack
 {
 	state = CHAR_STATE.ATTACK;
@@ -39,7 +45,9 @@ function resetEnemies()
 	for (var i = 0; i < _num; i++ )
 	{
 	    enemyInstance = instance_find(oEnemy, i);
-		enemyInstance.image_index = 0;
+		enemyInstance.sprite_index = sTMP_ENEMY;
+		enemyInstance.state = ENEMY_STATE.DEFAULT;
+		enemyInstance.alarm_set(0, ENEMY_MOVE_ALARM_SPEED);
 	}
 	
 }
@@ -72,7 +80,7 @@ function checkHitSword()
 										abs(_list[i].y - _y) - spriteHeight/2, 0, 0) <= _radius)
 			{
 				//hit, do something to them
-				_list[i].image_index = 1;
+				_list[i].sprite_index = sDED_ENEMY;
 			}
 		}
 	}
