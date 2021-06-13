@@ -5,21 +5,25 @@ if keyboard_check(ord("A")) //left
 {
 	charX -= SWORD_CHAR_MOVE_RATE * 0.5;
 	charY += SWORD_CHAR_MOVE_RATE * 0.5;
+	swordRunLeft();
 }
 if keyboard_check(ord("D")) //right
 {
 	charX += SWORD_CHAR_MOVE_RATE * 0.5;
 	charY -= SWORD_CHAR_MOVE_RATE * 0.5;
+	swordRunRight();
 }
 if keyboard_check(ord("W")) //up
 {
 	charX -= SWORD_CHAR_MOVE_RATE;
 	charY -= SWORD_CHAR_MOVE_RATE;
+	swordRunRight();
 }
 if keyboard_check(ord("S")) //down
 {
 	charX += SWORD_CHAR_MOVE_RATE;
 	charY += SWORD_CHAR_MOVE_RATE;
+	swordRunLeft();
 }
 if keyboard_check_pressed(ord("R")) //down
 	resetEnemies();
@@ -36,6 +40,26 @@ if mouse_check_button_pressed(mb_left) //attack
 		sprite_index = sSwordAttackAniRight;
 		
 	checkHitSword();
+}
+
+function swordRunRight()
+{
+	if(state != CHAR_STATE.RUN_RIGHT)
+	{
+		state = CHAR_STATE.RUN_RIGHT;
+		sprite_index = sSwordRunRight;
+		image_speed = 1;
+	}
+}
+
+function swordRunLeft()
+{
+	if(state != CHAR_STATE.RUN_LEFT)
+	{
+		state = CHAR_STATE.RUN_LEFT;
+		sprite_index = sSwordRunLeft;
+		image_speed = 1;
+	}
 }
 
 function resetEnemies()

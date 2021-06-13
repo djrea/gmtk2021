@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":2,},
+    {"id":{"name":"sSwordRunLeft","path":"sprites/sSwordRunLeft/sSwordRunLeft.yy",},"order":9,},
     {"id":{"name":"sStatic","path":"sprites/sStatic/sStatic.yy",},"order":0,},
     {"id":{"name":"ScreenToTileX","path":"scripts/ScreenToTileX/ScreenToTileX.yy",},"order":3,},
     {"id":{"name":"ScreenToTileY","path":"scripts/ScreenToTileY/ScreenToTileY.yy",},"order":4,},
@@ -14,6 +15,7 @@
     {"id":{"name":"sSwordAttackAniLeft","path":"sprites/sSwordAttackAniLeft/sSwordAttackAniLeft.yy",},"order":5,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":1,},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},"order":0,},
+    {"id":{"name":"sSwordRunRight","path":"sprites/sSwordRunRight/sSwordRunRight.yy",},"order":8,},
     {"id":{"name":"sSwordAttackAniRight","path":"sprites/sSwordAttackAniRight/sSwordAttackAniRight.yy",},"order":4,},
     {"id":{"name":"oSwordChar","path":"objects/oSwordChar/oSwordChar.yy",},"order":1,},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"order":0,},
