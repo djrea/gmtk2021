@@ -4,8 +4,5 @@
 screenX = TileToScreenX(charX, charY);
 screenY = TileToScreenY(charX, charY);
 
-var sprite = sSwordChar;
-if state == CHAR_STATE.ATTACK
-	sprite = sSwordAttackAniRight;
 
-draw_sprite(sprite, image_index, screenX, screenY);
+draw_sprite(sprite_index, image_index, screenX, screenY);

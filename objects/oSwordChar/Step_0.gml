@@ -10,9 +10,12 @@ if keyboard_check_pressed(ord("S")) //down
 	charY += 1;
 if mouse_check_button_pressed(mb_left) //attack
 {
-	//TODO attack in the direction of the mouse
 	state = CHAR_STATE.ATTACK;
 	image_index = 0;
 	image_speed = 1;
-	sprite_index = sSwordAttackAniRight;
+
+	if charX > ScreenToTileX(mouse_x, mouse_y)
+		sprite_index = sSwordAttackAniLeft;
+	else
+		sprite_index = sSwordAttackAniRight;
 }
