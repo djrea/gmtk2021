@@ -19,3 +19,26 @@ for(var tX = 0; tX < MAP_W; tX++)
 		global.theMap[# tX, tY] = thisTile;
 	}
 }
+
+//all vars in tile space
+function moveRestrictedToTiles(currX, currY, desiredX, desiredY, maxHeightDelta)
+{
+	retX = currX;
+	retY = currY;
+	
+	tileData = global.theMap[# int64(desiredX), int64(desiredY)];
+	tileType = tileData[0];
+	tileZ = tileData[1];
+	oldZ =  global.theMap[# int64(currX), int64(currY)][1];
+	if tileType > 0  && //not empty tile or null tile
+		abs(tileZ - oldZ) < maxHeightDelta
+	{
+		retX = desiredX;
+		retY = desiredY;
+	}
+	
+	return [retX, retY];
+}
+
+
+
