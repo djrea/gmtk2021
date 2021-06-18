@@ -24,9 +24,6 @@ if state == ENEMY_STATE.MOVING
 	newPos = oRender.moveRestrictedToTiles(posX, posY, newX, newY, SLIME_MANTLE_HEIGHT)
 	posX = newPos[0];
 	posY = newPos[1];
-	
-	x = TileToScreenX(posX, posY);
-	y = TileToScreenY(posX, posY);
 }
 else
 {
