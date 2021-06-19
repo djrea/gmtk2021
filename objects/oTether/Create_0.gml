@@ -39,5 +39,7 @@ function directionToTether(fromX, fromY)
 		else
 			projectionY = rangedTetherY;
 	
+	//TODO: if this is immediately changed to Tile space it may not line up with
+	//charX/charY if slime's nearest point is  a char
 	return [ceil(projectionX), ceil(projectionY)];
 }
