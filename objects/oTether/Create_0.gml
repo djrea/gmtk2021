@@ -16,5 +16,28 @@ function directionToTether(fromX, fromY)
 	projectionX = 1.0*(fromX + slope*(fromY-yInterceptTether))/(1+slope*slope);
 	projectionY = slope * ( projectionX ) + yInterceptTether
 	
-	return [projectionX, projectionY];
+	//restrict to the nearest character if projected onto the line outside of the tether
+	if projectionX < swordTetherX and projectionX < rangedTetherX
+		if swordTetherX < rangedTetherX
+			projectionX = swordTetherX;
+		else
+			projectionX = rangedTetherX;
+	else if projectionX > swordTetherX and projectionX > rangedTetherX
+		if swordTetherX > rangedTetherX
+			projectionX = swordTetherX;
+		else
+			projectionX = rangedTetherX;
+	//now do Y
+	if projectionY < swordTetherY and projectionY < rangedTetherY
+		if swordTetherY < rangedTetherY
+			projectionY = swordTetherY;
+		else
+			projectionY = rangedTetherY;
+	else if projectionY > swordTetherY and projectionY > rangedTetherY
+		if swordTetherY > rangedTetherY
+			projectionY = swordTetherY;
+		else
+			projectionY = rangedTetherY;
+	
+	return [ceil(projectionX), ceil(projectionY)];
 }
